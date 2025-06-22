@@ -553,7 +553,7 @@ GameObject:
   - component: {fileID: 1179720197}
   - component: {fileID: 1179720201}
   m_Layer: 0
-  m_Name: Player
+  m_Name: player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -689,7 +689,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 6549277350994640416, guid: e1810818135fe924db5a9f3b3f4ddce1,
     type: 3}
-  count: 10000
+  count: 1000
   spawnRadius: 50
   playerTransform: {fileID: 1179720200}
   distThreshold: 10

@@ -46,17 +46,22 @@ namespace JobSystem.CaseStudy3
         {
             if (isDone)
             {
-                ControlEnemyJob job = new ControlEnemyJob()
-                {
-                    playerPos = playerTransform.position,
-                    deltaTime = Time.deltaTime,
-                    distThreshold = distThreshold,
-                    speed = speed
-                };
-                
-                JobHandle handle = job.Schedule(transformAccessArray);
-                handle.Complete();
+                JobMoving();
             }
+        }
+
+        private void JobMoving()
+        {
+            ControlEnemyJob job = new ControlEnemyJob()
+            {
+                playerPos = playerTransform.position,
+                deltaTime = Time.deltaTime,
+                distThreshold = distThreshold,
+                speed = speed
+            };
+            
+            JobHandle handle = job.Schedule(transformAccessArray);
+            handle.Complete();
         }
 
         private void NormalBehaviour()
@@ -75,6 +80,11 @@ namespace JobSystem.CaseStudy3
                 }
                 enemies[i].transform.position = new Vector3(enemies[i].transform.position.x, 0, enemies[i].transform.position.z);
             }
+        }
+
+        private void OnApplicationQuit()
+        {
+            transformAccessArray.Dispose();
         }
     }
 }

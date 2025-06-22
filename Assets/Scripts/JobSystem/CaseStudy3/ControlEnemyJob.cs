@@ -2,6 +2,7 @@
 using Unity.Collections;
 using Unity.Jobs;
 using Unity.Mathematics;
+using UnityEngine;
 using UnityEngine.Jobs;
 
 namespace JobSystem.CaseStudy3
@@ -13,6 +14,7 @@ namespace JobSystem.CaseStudy3
         [ReadOnly] public float deltaTime;
         [ReadOnly] public float distThreshold;
         [ReadOnly] public float speed;
+        
         
         public void Execute(int index, TransformAccess transform)
         {

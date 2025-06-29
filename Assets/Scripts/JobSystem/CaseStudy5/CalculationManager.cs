@@ -18,6 +18,7 @@ namespace JobSystem.CaseStudy5
         private CalculationJob job;
 
         private JobHandle jobHandle;
+        
         private void Start()
         {
             calculations = new List<Calculation>();
@@ -40,7 +41,10 @@ namespace JobSystem.CaseStudy5
 
         private void Update()
         {
-            
+            job = new CalculationJob()
+            {
+                dataArray = calculationDataArray
+            };
             jobHandle = job.Schedule(calculations.Count, 64);
             jobHandle.Complete();
         }

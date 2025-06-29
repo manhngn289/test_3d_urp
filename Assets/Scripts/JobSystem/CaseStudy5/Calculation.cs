@@ -21,6 +21,7 @@ namespace JobSystem.CaseStudy5
             public void Update()
             {
                 sum += tmp * random.NextInt(10, 100);
+                Debug.Log(sum);
             }
         }
 

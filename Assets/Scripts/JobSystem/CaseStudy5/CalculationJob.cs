@@ -5,8 +5,7 @@ namespace JobSystem.CaseStudy5
 {
     public struct CalculationJob : IJobParallelFor
     {
-        public NativeArray<Calculation.Data> dataArray; 
-        
+        public NativeArray<Calculation.Data> dataArray;
         
         public void Execute(int index)
         {
